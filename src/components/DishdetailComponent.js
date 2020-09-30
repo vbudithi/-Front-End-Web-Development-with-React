@@ -21,11 +21,13 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
      }
  }
 
-function RenderComments({comments}) {
-    if(comments== null){
+function RenderComments({dish}) {
+    if(dish == null){
         return(<div></div>)
     }
-const cmnts = comments.map(comment =>{
+    
+    let comments_list = dish.comments;
+    const cmnts = comments_list.map(comment =>{
     return(
         <li key= {comment.id}>
             <p>{comment.comment}</p>
